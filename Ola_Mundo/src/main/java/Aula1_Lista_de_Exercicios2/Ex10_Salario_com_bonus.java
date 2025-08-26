@@ -20,9 +20,9 @@ public class Ex10_Salario_com_bonus {
         double ano = teclado.nextDouble();
         
         double aumento = sal + (sal * (ano / 100));
-        
-        System.out.println("Parabens,"+nome+" Você recebeu um aumento de: "+aumento);
-       
+        double por = ano / 100;
+        System.out.println("Parabens,"+nome+" Você recebeu um aumento de: "+por+"%, total de:"+aumento);
+      
     }
     
 }
