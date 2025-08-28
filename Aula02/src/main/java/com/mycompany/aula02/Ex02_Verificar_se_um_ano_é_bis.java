@@ -16,16 +16,10 @@ public class Ex02_Verificar_se_um_ano_é_bis {
         System.out.print("Digite um ano: ");
         int ano = teclado.nextInt();
         
-        if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+        boolean bi = (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
         
-        System.out.println("O ano de "+ano+" é bissexto");
+        System.out.println("O ano de "+ano+" é bissexto? "+bi);
        
-    } else {
-            
-            System.out.println("O ao de "+ano+" não é bissexto");
-            
-        }
-        
     }
     
 }
