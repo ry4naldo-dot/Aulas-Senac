@@ -23,8 +23,8 @@ public class Ex04_Calcular_hipotenusa_de_triangulo {
         
         double res = Math.sqrt(hipotenusa);
       
-        System.out.printf("O resultado da hipotenusa é: %.2f%n",hipotenusa);
-        
+        System.out.printf("O resultado da hipotenusa é: %.2f%n",res);
+       
     }
     
 }
