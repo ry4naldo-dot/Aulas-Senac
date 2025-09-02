@@ -22,7 +22,7 @@ public class Ex07_emprestimo {
         System.out.print("Em quantos anos você pretende pagar? ");
         int anos = teclado.nextInt();
         
-        int meses = anos * 12;
+        int meses = anos * 12; 
         double prestacao = valorcasa / meses;
         
         if (prestacao > sal * 0.3) {
