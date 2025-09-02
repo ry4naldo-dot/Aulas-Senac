@@ -22,13 +22,13 @@ public class Ex01_Promocao_dia_da_mulher {
         System.out.println("Digite o valor da compra: ");
         double val = teclado.nextDouble();
         
-        if ("masculino".equals(sexo)) {
+        if ("masculino".equalsIgnoreCase(sexo)) {
             
             double desc = val - (val * 0.05);
             
             System.out.println("Parabens "+nome+" você ganhou um desconto de 5%, total de "+desc+" R$");
             
-        } else if ("feminino".equals(sexo)){
+        } else if ("feminino".equalsIgnoreCase(sexo)){
             
             double desc = val - (val * 0.13);
             
