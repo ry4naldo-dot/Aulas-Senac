@@ -14,7 +14,7 @@ public class Ex09semCalculo_Contador_de_Palavra {
         Scanner teclado = new Scanner(System.in);
         
         System.out.print("Digite uma frase: ");
-        String frase = teclado.nextLine();
+        String frase = teclado.nextLine().trim();
         
         if (frase.isEmpty()) {
             
