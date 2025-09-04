@@ -22,12 +22,27 @@ public class Ex07_incremento {
         System.out.print("Digite o incremento: ");
         int inc = teclado.nextInt();
         
+        if (in == ul){
+            
+            System.out.print("ERRO");
+            
+        } else if (in < ul) {
+        
         for (int i = in; i <= ul; i+=inc) {
             
             System.out.println(i);
             
         }
         
+        } else if (in > ul) {
+            
+            for (int i = in; i >= ul; i-=inc) {
+                
+                System.out.println(i);
+                
+            }
+            
+        }
     }
     
 }
