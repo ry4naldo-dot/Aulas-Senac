@@ -23,7 +23,7 @@ public class Ex10_Jogo_de_Adivinhação {
         System.out.print("Digite um numero de 1 a 100: ");
         int nu = teclado.nextInt();
         
-        for (int i = 1; i <= 7; i++) {
+        for (int i = 2; i <= 7; i++) {
             
             
             
