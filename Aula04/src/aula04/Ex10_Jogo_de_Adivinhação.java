@@ -15,9 +15,7 @@ public class Ex10_Jogo_de_Adivinhação {
         Scanner teclado = new Scanner(System.in);
         
         Random rand = new Random();
-        int min = 1;
-        int max = 100;
-        int comp = rand.nextInt(max - min + 1) + min;// (100)+1
+        int comp = rand.nextInt(100) + 1;
         int tent = 0;
         
         System.out.print("Digite um numero de 1 a 100: ");
