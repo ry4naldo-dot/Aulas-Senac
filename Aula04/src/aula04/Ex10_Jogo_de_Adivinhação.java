@@ -25,7 +25,7 @@ public class Ex10_Jogo_de_Adivinhação {
         
         for (int i = 2; i <= 7; i++) {
             
-            
+            tent++;
             
             if (nu > 100 || nu < 0) {
             
@@ -42,6 +42,7 @@ public class Ex10_Jogo_de_Adivinhação {
         } else if (comp == nu) {
             
                 System.out.println("Parabens, você ganhou!");
+                System.out.println("Você venceu depois de "+tent+" tentativas");
                 break;
             
         }
