@@ -20,7 +20,7 @@ public class Ex04_Controle_de_Dispositivos_Inteligentes {
         System.out.println("5 - Abrir portão");
         System.out.println("6 - Fechar portão");
         int op = teclado.nextInt();
-        
+              
         switch (op) {
             
             case 1:
@@ -42,10 +42,10 @@ public class Ex04_Controle_de_Dispositivos_Inteligentes {
                 System.out.println("---- fechando portão ----");
                 break;
             default:    
-                System.out.println("Comando inválido");
-                              
+                System.out.println("Comando inválido");     
+                
         }
-        
+              
     }
     
 }

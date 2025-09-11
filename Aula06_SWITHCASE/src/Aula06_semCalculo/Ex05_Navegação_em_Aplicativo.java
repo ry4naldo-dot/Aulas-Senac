@@ -12,6 +12,10 @@ public class Ex05_Navegação_em_Aplicativo {
     public static void main(String[] args) {
         
         Scanner teclado = new Scanner(System.in);
+       
+        int op;
+        
+        do {
         
         System.out.println("===============================");
         System.out.println("     [1] Página inicial");
@@ -19,9 +23,9 @@ public class Ex05_Navegação_em_Aplicativo {
         System.out.println("     [3] Configurações");
         System.out.println("     [4] Notificações");
         System.out.println("     [5] Sair");
-        int op = teclado.nextInt();
+        op = teclado.nextInt();
         System.out.println("===============================");
-        
+          
         switch (op) {
             
             case 1:
@@ -44,6 +48,7 @@ public class Ex05_Navegação_em_Aplicativo {
                 
         }
         
+        } while (op <= 4);
         
     }
     
