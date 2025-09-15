@@ -24,18 +24,24 @@ public class Ex05_Reverter_Lista {
             
             System.out.println("Palavra "+(i+1)+" : ");
             pal = teclado.nextLine();
-            
-            invertida = new StringBuilder(pal).reverse().toString();
-            
-            palavras.add(invertida);
+            palavras.add(pal);
             
         }
         
-        if (pal != invertida) {
+        System.out.println("Ordem digitada: \n"+palavras);
+        
+        int tam = palavras.size();
+        
+        for (int i = 0; i < tam / 2; i++) {
             
-            System.out.println("A palavra que você digitou invertida é "+palavras);
+            String inv = palavras.get(i);
             
-        } 
+            palavras.set(i, palavras.get(tam - 1 - i));
+            palavras.set(tam-1-i, inv);
+            
+        }
+        
+        System.out.println("Ordem invertida: \n"+palavras);
         
     }
     
