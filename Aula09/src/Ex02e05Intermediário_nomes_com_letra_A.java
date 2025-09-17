@@ -22,7 +22,7 @@ public class Ex02e05Intermediário_nomes_com_letra_A {
         for (int i = 0; i < quantidade; i++) {
             
             System.out.print("Digite a palavra " + (i + 1) + ": ");
-            String nome = teclado.nextLine();
+            String nome = teclado.nextLine().toLowerCase();
             nomes.add(nome);
             
         }
