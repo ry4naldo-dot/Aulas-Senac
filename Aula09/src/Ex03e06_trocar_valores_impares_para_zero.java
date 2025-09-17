@@ -32,7 +32,7 @@ public class Ex03e06_trocar_valores_impares_para_zero {
             
         }
         
-        
+       
         for (int i = 0; i < numeros.length; i++) {
             
             if (numeros[i] % 2 != 0) {
@@ -41,14 +41,14 @@ public class Ex03e06_trocar_valores_impares_para_zero {
                 
             }
             
-            System.out.println("Depois: ");
+        }
+        
+        System.out.println("Depois: ");
             for (int num : numeros) {
                 
                 System.out.println(num);
                 
             }
-            
-        }
         
     }
     
