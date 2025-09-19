@@ -19,10 +19,11 @@ public class Ex05Fácil_Exibir_Elementos_de_HashSet {
         int qtd = teclado.nextInt();
         teclado.nextLine();
         
+        int[] quantidade = new int [qtd];
         
-        for (int i = 1; i <= qtd; i++) {
+        for (int i: quantidade) {
             
-            System.out.println("Digite "+i+" : ");
+            System.out.println("Digite "+(i+1)+" : ");
             String elemento = teclado.nextLine();
             elementos.add(elemento);  
             
