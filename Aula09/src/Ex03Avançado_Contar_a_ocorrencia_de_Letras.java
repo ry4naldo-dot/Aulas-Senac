@@ -19,21 +19,32 @@ public class Ex03Avançado_Contar_a_ocorrencia_de_Letras {
         String texto = teclado.nextLine().toLowerCase(); 
         
         for (int i = 0; i < texto.length(); i++) {
+            
             char letra = texto.charAt(i);
+            
             if (Character.isLetter(letra)) {
+                
                 letras.add(letra);
+                
             }
         }
         
         
         System.out.println("Ocorrências de cada letra:");
+        
         for (char letra : letras) {
+            
             int contagem = 0;
+            
             for (int i = 0; i < texto.length(); i++) {
+                
                 if (texto.charAt(i) == letra) {
+                    
                     contagem++;
+                    
                 }
             }
+            
             System.out.println(letra + ": " + contagem);
         }
         
