@@ -109,18 +109,22 @@ public class RPG2 {
         
         String escolha = scanner.nextLine();
         
-        if(escolha.equals("Poção")){
+        if(escolha.equalsIgnoreCase("Poção")){
             
             hp += 30;
             item.remove("Poçao");
             
         }
         
-        if(escolha.equals("Elixir dos Deuses")){
+        if(escolha.equalsIgnoreCase("Elixir dos Deuses")){
             
             hp *= 2; if (hp > 200) hp = 200;
             item.remove("Elixir dos Deuses");
                         
+        } else {
+            
+            System.out.println("Opcção inválida.");
+            
         }
         
         pausa();
