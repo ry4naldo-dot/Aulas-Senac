@@ -197,7 +197,7 @@ public class RPG2 {
         while (true) {
             System.out.printf("Seu ouro: %d\n", ouro);
             System.out.println("  1. Espada Vampírica (+10 ATQ e roubo de vida) - 500 Ouro");
-            System.out.println("  2. Pedra Suspeita (Ressurreição) - 5000 Ouro");
+            System.out.println("  2. Pedra Suspeita (???) - 5000 Ouro");
             System.out.println("  3. Elixir dos Deuses (x2 HP) - 10000 Ouro");
             System.out.println("  4. Voltar");
             System.out.print("Escolha: ");
