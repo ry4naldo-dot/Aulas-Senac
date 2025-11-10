@@ -30,4 +30,4 @@ insert into jogos_que_mais_joguei values
 (default, 'Red Dead Redemption 2', '2018-10-26', 'Ps4, Xbox One, PC', 'Ação - aventura', 'Rockstar', 'Rockstar', '65 Horas'),
 (default, 'Halo:CE', '2001-11-15', 'Xbox', 'FPS', 'Bungie', 'Microsoft', '10 Horas'),
 (default, 'Stardew Valley', '2016-02-26', 'Ps4, PC, Xbox One, PS Vita, Nintendo Switch', 'RPG, simulação, indie', 'ConcernedApe', 'Chucklefish', '168 Horas'),
-(default, 'Halo Reach', '2022-09-25', 'Xbox 360', 'FPS', 'Bungie', 'Microsoft', '8 Horas');
+(default, 'Halo Reach', '2010-09-14', 'Xbox 360', 'FPS', 'Bungie', 'Microsoft', '8 Horas');
