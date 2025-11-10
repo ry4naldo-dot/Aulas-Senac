@@ -61,6 +61,13 @@ update personagens set desenho_id = 3 where nome = 'Aang';
 insert into personagens (nome, idade, desenho_id) values
 ('Homer Simpson', 40,2);
 
+-- insert into personagens (nome, idade, desenho_id) values
+-- ('Teste1', 40,2),
+-- ('Teste2', 40,2),
+-- ('Teste3', 40,2),
+-- ('Teste4', 40,2);
+-- truncate table personagens;
+
 insert into personagens (nome, idade, desenho_id) values
 ('Jerry', NULL, 1),
 ('Lisa Simpson', 8, 2),
