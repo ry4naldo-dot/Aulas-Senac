@@ -11,12 +11,6 @@ public class Funcionario {
     double salario;
     String departamento;
 
-//    public Funcionario(String nome, double salario, String departamento) {
-//        this.nome = nome;
-//        this.salario = salario;
-//        this.departamento = departamento;
-//    }
-
     void aumentarSalario(double percentual) {
         
         salario += salario * (percentual / 100);
