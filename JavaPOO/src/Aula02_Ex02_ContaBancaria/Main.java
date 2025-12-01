@@ -1,5 +1,5 @@
 
-package Aula_02_Ex02_ContaBancaria;
+package Aula02_Ex02_ContaBancaria;
 
 /**
  *

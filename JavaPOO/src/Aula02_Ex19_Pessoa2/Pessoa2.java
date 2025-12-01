@@ -1,0 +1,37 @@
+
+package Aula02_Ex19_Pessoa2;
+
+/**
+ *
+ * @author Ryan
+ */
+public class Pessoa2 {
+    
+    private String nome;
+    private int idade;
+    private double altura;
+
+    public Pessoa2(String nome, int idade, double altura) {
+        this.nome = nome;
+        this.idade = idade;
+        this.altura = altura;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+
+    public String toString() {
+        return "Pessoa [Nome: " + nome + ", Idade: " + idade + ", Altura: " + altura + "]";
+    }
+  
+}
