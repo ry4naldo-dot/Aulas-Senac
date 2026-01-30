@@ -1,5 +1,5 @@
 
-package javacrudapp;
+package projetoint;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,30 +8,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author RYANGABRIELDAROSA
  */
-public class UsuarioDAO { // DAO - DATA ACESS OBJECT (Classe onde contém métodos de conexão com bd)
+public class DaocaoDAO {
     
     private Connection connection;
-    public UsuarioDAO() throws SQLException{
+    public DaocaoDAO() throws SQLException{
         
-        connection = DBConnection.getConnection();
+        connection = ConnectionDB.getConnection();
         
     }
     
     // CREATE
-    public int InserirUsuario(Usuario usuario){
+    public int InserirDoacao(Doacao doacao){
         try{
             
-            String sql = "Insert into usuarios (nome,sobrenome,email,cidade) values(?,?,?,?)";
+            String sql = "Insert into informacoes (nome_doador,sobrenome_doador,numeroT,itemNome,quantidade,dataValida) values(?,?,?,?)";
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, usuario.getNome());
-            stmt.setString(2, usuario.getSobrenome());
-            stmt.setString(3,usuario.getEmail());
-            stmt.setString(4,usuario.getCidade());
+            stmt.setString(1, doacao.getNome());
+            stmt.setString(2, doacao.getSobrenome());
+            stmt.setString(3, doacao.getNumero());
+            stmt.setString(4, doacao.getItem());
+            stmt.setString(5, doacao.getQuant());
+            stmt.setString(6, doacao.getData());
             stmt.execute();
             
             return 1;
@@ -44,25 +45,27 @@ public class UsuarioDAO { // DAO - DATA ACESS OBJECT (Classe onde contém métod
     }
     
     // SELECT / READ usuario
-    public List<Usuario> getUsuarios(){
+    public List<Doacao> getDoacoes(){
         
-        List<Usuario> usuarios = new ArrayList<>();
+        List<Doacao> doacoes = new ArrayList<>();
         
         try{
             
-            String sql = "select * from usuarios";
+            String sql = "select * from informacoes";
             PreparedStatement stmt = connection.prepareStatement(sql);
             
             ResultSet rs = stmt.executeQuery();
             while(rs.next()){
                 
                 int id = rs.getInt("id");
-                String nome = rs.getString("nome");
-                String sobrenome = rs.getString("sobrenome");
-                String email = rs.getString("email");
-                String cidade = rs.getString("cidade");
+                String nome_doador = rs.getString("nome_doador");
+                String sobrenome_doador = rs.getString("sobrenome_doador");
+                String numeroT = rs.getString("email");
+                String itemNome = rs.getString("cidade");
+                String quantidade = rs.getString("quantidade");
+                String dataValidade = rs.getString("dataValida");
                 
-                usuarios.add(new Usuario(id, nome, sobrenome, email, cidade));
+                doacoes.add(new Doacao(id, nome_doador, sobrenome_doador, numeroT, itemNome, quantidade,dataValidade));
                 
             }
             
@@ -71,11 +74,11 @@ public class UsuarioDAO { // DAO - DATA ACESS OBJECT (Classe onde contém métod
             e.printStackTrace();
             
         }
-        return usuarios;
+        return doacoes;
     }
     
     //UPDATE
-    public int updateUsuario(Usuario usuario){
+    public int updateDoacao(Doacao doacao){
         
         try{
             
@@ -111,4 +114,5 @@ public class UsuarioDAO { // DAO - DATA ACESS OBJECT (Classe onde contém métod
             
         }
     }
+    
 }

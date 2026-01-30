@@ -6,6 +6,8 @@ package javacrudapp;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,7 +23,12 @@ public class CrudAppFrame extends javax.swing.JFrame {
     
     public CrudAppFrame() {
         initComponents();
-        //
+        try {
+            loadUserData();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(CrudAppFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -59,12 +66,16 @@ public class CrudAppFrame extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CRUD COM INTERFACE GRÁFICA");
 
+        jLabel2.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         jLabel2.setText("Nome");
 
+        jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
         jLabel3.setText("Email");
 
+        jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         jLabel4.setText("Sobrenome");
 
+        jLabel5.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
         jLabel5.setText("Cidade");
 
         addButton.setBackground(new java.awt.Color(51, 153, 0));
@@ -148,7 +159,7 @@ public class CrudAppFrame extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cidadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addButton)
                     .addComponent(atualizarButton)
@@ -187,7 +198,7 @@ public class CrudAppFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -204,7 +215,7 @@ public class CrudAppFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -270,6 +281,8 @@ public class CrudAppFrame extends javax.swing.JFrame {
         String addEmail = emailTextField.getText();
         String addCidade = cidadeTextField.getText();
         
+
+ 
         if(addNome.isEmpty() || addSobrenome.isEmpty() || addEmail.isEmpty() || addCidade.isEmpty()){
             
             JOptionPane.showMessageDialog(this, "Por favor preencha todos os campos","ERRO",JOptionPane.ERROR_MESSAGE);
@@ -283,9 +296,10 @@ public class CrudAppFrame extends javax.swing.JFrame {
                 
                 userDao = new UsuarioDAO();
                 int res = userDao.InserirUsuario(novoUsuario);
+               
                 if(res == 1){
                     
-                   JOptionPane.showMessageDialog(this, "Usuário criado com seucesso!","SUCESSO",JOptionPane.INFORMATION_MESSAGE);
+                   JOptionPane.showMessageDialog(this, "Usuário criado com sucesso!","SUCESSO",JOptionPane.INFORMATION_MESSAGE);
                    this.clearForm();
                    loadUserData(); //Carregamento de dados do usuario
                    
