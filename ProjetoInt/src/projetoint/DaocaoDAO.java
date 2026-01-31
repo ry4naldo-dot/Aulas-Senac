@@ -82,13 +82,15 @@ public class DaocaoDAO {
         
         try{
             
-            String sql = "update usuarios set nome=?, sobrenome=?,email=?,cidade=? where id=?";
+            String sql = "update informacoes set nome_doador=?, sobrenome_doador=?,numeroT=?,itemNome=?,quantidade,dataValida where id=?";
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, usuario.getNome());
-            stmt.setString(2,usuario.getSobrenome());
-            stmt.setString(3, usuario.getEmail());
-            stmt.setString(4, usuario.getCidade());
-            stmt.setInt(5, usuario.getId());
+            stmt.setString(1, doacao.getNome());
+            stmt.setString(2, doacao.getSobrenome());
+            stmt.setString(3, doacao.getNumero());
+            stmt.setString(4, doacao.getItem());
+            stmt.setString(5, doacao.getQuant());
+            stmt.setString(6, doacao.getData());
+            stmt.setInt(7, doacao.getId());
             stmt.executeUpdate();
             return 1;
             
@@ -99,7 +101,7 @@ public class DaocaoDAO {
     }
     
     // DELETE
-    public void deleteUsuario(int id){
+    /*public void deleteUsuario(int id){
         
         try{
             
@@ -113,6 +115,6 @@ public class DaocaoDAO {
             e.printStackTrace();
             
         }
-    }
+    }*/
     
 }
