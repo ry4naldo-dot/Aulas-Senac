@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package projetoint;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -63,11 +62,15 @@ public class ListaDonations extends javax.swing.JFrame {
             }
         ));
         listaDanonations.setMinimumSize(new java.awt.Dimension(200, 400));
-        listaDanonations.setPreferredSize(new java.awt.Dimension(450, 400));
         listaDanonations.setRowHeight(60);
         listaDanonations.setShowGrid(false);
         listaDanonations.setShowHorizontalLines(true);
         listaDanonations.setShowVerticalLines(true);
+        listaDanonations.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaDanonationsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(listaDanonations);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -76,14 +79,14 @@ public class ListaDonations extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1896, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1056, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -106,6 +109,25 @@ public class ListaDonations extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void listaDanonationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDanonationsMouseClicked
+        // TODO add your handling code here:
+        
+         /*int linhaSelecionada = ListaDonations.getSelectedRow();
+        
+        if(linhaSelecionada != -1){
+            
+            IdDoacaoSelecionado = Integer.parseInt(ListaDonations.getValueAt(linhaSelecionada, 0).toString());
+            NomeD.setText(ListaDonations.getValueAt(linhaSelecionada, 1).toString());
+            SobreD.setText(ListaDonations.getValueAt(linhaSelecionada, 2).toString());
+            TelD.setText(ListaDonations.getValueAt(linhaSelecionada, 3).toString());
+            ItemD.setText(ListaDonations.getValueAt(linhaSelecionada, 4).toString());
+            QuantD.setText(ListaDonations.getValueAt(linhaSelecionada, 5).toString());
+            DataV.setText(ListaDonations.getValueAt(linhaSelecionada, 4).toString());
+            
+        }*/
+        
+    }//GEN-LAST:event_listaDanonationsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -133,6 +155,9 @@ public class ListaDonations extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ListaDonations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -141,6 +166,40 @@ public class ListaDonations extends javax.swing.JFrame {
             }
         });
     }
+    
+    /*private void clearForm() {
+        
+        NomeD.setText("");
+        SobreD.setText("");
+        TelD.setText("");
+        ItemD.setText("");
+        QuantD.setText("");
+        DataV.setText("");
+        
+    }
+
+    private void loadUserData() throws SQLException { 
+        
+        DoacaoDAO userDao = new DoacaoDAO();
+        List<Doacao> doacoes = userDao.getDoacoes();
+        String[][] data = new String[doacoes.size()][5];
+        
+        //Preenchendo a tabela (colunas e linhas)
+      for (int i = 0; i < doacoes.size(); i++) {
+            
+            data[i][0] = String.valueOf(doacoes.get(i).getId());
+            data[i][1] = doacoes.get(i).getNome();
+            data[i][2] = doacoes.get(i).getSobrenome();
+            data[i][3] = doacoes.get(i).getNumero();
+            data[i][4] = doacoes.get(i).getItem();
+            data[i][5] = doacoes.get(i).getQuant();
+            data[i][6] = doacoes.get(i).getData();
+            
+        }
+        
+        String[] nomeColuna = {"Id","Nome","Sobrenome","Telefone","Item doado","Quantidade","Data"};
+        //ListaDonations.setModel(new javax.swing.table.DefaultTableModel(data,nomeColuna));
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
