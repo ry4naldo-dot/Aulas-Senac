@@ -1,6 +1,9 @@
 
 package projetoint;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author RYANGABRIELDAROSA
@@ -8,16 +11,19 @@ package projetoint;
 public class Doacao {
     
     private int id;
-    public String nome,sobrenome,numero,item,quant,data;
+    public String nome,sobrenome,numero,item,quant;
+    LocalDate data = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    String datastring = data.format(formatter);
 
-    public Doacao(int id, String nome, String sobrenome, String numero, String item, String quant, String data) {
+    public Doacao(int id, String nome, String sobrenome, String numero, String item, String quant, String datastring) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.numero = numero;
         this.item = item;
         this.quant = quant;
-        this.data = data;
+        this.datastring = datastring;
     }
 
     public int getId() {
@@ -68,11 +74,28 @@ public class Doacao {
         this.quant = quant;
     }
 
-    public String getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
+
+    public DateTimeFormatter getFormatter() {
+        return formatter;
+    }
+
+    public void setFormatter(DateTimeFormatter formatter) {
+        this.formatter = formatter;
+    }
+
+    public String getDatastring() {
+        return datastring;
+    }
+
+    public void setDatastring(String datastring) {
+        this.datastring = datastring;
+    }
+
 }

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +27,14 @@ public class MenuInicial extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(MenuInicial.class.getName()).log(Level.SEVERE, null, ex);
         }*/
+        
+        setTitle("Tela Cheia");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // --- CÓDIGO PARA TELA CHEIA ---
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        // ------------------------------
+        
     }
 
     /**

@@ -21,18 +21,20 @@ public class DoacaoDAO {
         
     }
     
+    //LocalDate dataAtual = LocalDate.now();
+    
     // CREATE
     public int InserirDoacao(Doacao doacao){
         try{
             
-            String sql = "Insert into informacoes (nome_doador,sobrenome_doador,numeroT,itemNome,quantidade,dataValida) values(?,?,?,?)";
+            String sql = "Insert into informacoes (nome_doador,sobrenome_doador,numeroT,itemNome,quantidade,dataValida) values(?,?,?,?,?,?)";
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, doacao.getNome());
             stmt.setString(2, doacao.getSobrenome());
             stmt.setString(3, doacao.getNumero());
             stmt.setString(4, doacao.getItem());
             stmt.setString(5, doacao.getQuant());
-            stmt.setString(6, doacao.getData());
+            stmt.setString(6, doacao.getDatastring());
             stmt.execute();
             
             return 1;
@@ -60,8 +62,8 @@ public class DoacaoDAO {
                 int id = rs.getInt("id");
                 String nome_doador = rs.getString("nome_doador");
                 String sobrenome_doador = rs.getString("sobrenome_doador");
-                String numeroT = rs.getString("email");
-                String itemNome = rs.getString("cidade");
+                String numeroT = rs.getString("numeroT");
+                String itemNome = rs.getString("itemNome");
                 String quantidade = rs.getString("quantidade");
                 String dataValidade = rs.getString("dataValida");
                 
@@ -89,7 +91,7 @@ public class DoacaoDAO {
             stmt.setString(3, doacao.getNumero());
             stmt.setString(4, doacao.getItem());
             stmt.setString(5, doacao.getQuant());
-            stmt.setString(6, doacao.getData());
+            stmt.setString(6, doacao.getDatastring());
             stmt.setInt(7, doacao.getId());
             stmt.executeUpdate();
             return 1;
