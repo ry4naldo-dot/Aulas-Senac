@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class MenuInicial extends javax.swing.JFrame {
 
     /**
-     * Creates new form CrudAppFrame
+     * Creates new form MenuInicial
      */
     private int IdUsuarioSelecionado = -1;
     
@@ -28,12 +28,11 @@ public class MenuInicial extends javax.swing.JFrame {
             Logger.getLogger(MenuInicial.class.getName()).log(Level.SEVERE, null, ex);
         }*/
         
-        setTitle("Tela Cheia");
+        setTitle("");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        // --- CÓDIGO PARA TELA CHEIA ---
+        // CÓDIGO PARA TELA CHEIA 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        // ------------------------------
         
     }
 
