@@ -430,7 +430,7 @@ public class Menu extends javax.swing.JFrame {
                    
                 }else{
                     
-                    JOptionPane.showMessageDialog(this, "CPF Inexistente" ,"ERRO" ,JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "CPF Inexistente ou Data Incorreta" ,"ERRO" ,JOptionPane.INFORMATION_MESSAGE);
                     JOptionPane.showMessageDialog(this, "Erro ocorrido ao inserir a doação","ERRO",JOptionPane.ERROR_MESSAGE);
                     
                 }
