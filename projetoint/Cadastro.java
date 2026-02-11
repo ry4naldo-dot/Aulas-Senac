@@ -63,7 +63,7 @@ public class Cadastro extends javax.swing.JFrame {
         TelefoneDFormattedTextField = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tabela_Doacoes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -240,7 +240,7 @@ public class Cadastro extends javax.swing.JFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tabela_Doacoes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -248,10 +248,10 @@ public class Cadastro extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nome", "Sobrenome", "Idade", "Telefone"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Tabela_Doacoes);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -330,7 +330,7 @@ public class Cadastro extends javax.swing.JFrame {
                    
                 }else{
                     
-                    JOptionPane.showMessageDialog(this, "O doador já existe" ,"!!!" ,JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "O doador já existe!!!" ,"ERRO" ,JOptionPane.INFORMATION_MESSAGE);
                     JOptionPane.showMessageDialog(this, "Erro ocorrido ao inserir o cadastro","ERRO",JOptionPane.ERROR_MESSAGE);
                     
                 }
@@ -407,22 +407,22 @@ public class Cadastro extends javax.swing.JFrame {
         
         DoadorDAO doaDao = new DoadorDAO();
         List<Doador> doadores = doaDao.getDoador();
-        Object[][] data = new Object[doadores.size()][5];
+        Object[][] data = new Object[doadores.size()][4];
         
         //Preenchendo a tabela (colunas e linhas)
         for (int i = 0; i < doadores.size(); i++) {
             
-            data[i][0] = String.valueOf(doadores.get(i).getCpf());
-            data[i][1] = doadores.get(i).getNomeDoa();
-            data[i][2] = doadores.get(i).getSobreDoa();
-            data[i][3] = doadores.get(i).getIdade();
-            data[i][4] = doadores.get(i).getNumeroT();
+            //data[i][0] = String.valueOf(doadores.get(i).getCpf());
+            data[i][0] = doadores.get(i).getNomeDoa();
+            data[i][1] = doadores.get(i).getSobreDoa();
+            data[i][2] = doadores.get(i).getIdade();
+            data[i][3] = doadores.get(i).getNumeroT();
             //data[i][5] = doadores.get(i).getInfID();
             
         }
         
-        String[] nomeColuna = {"Nome","Sobrenome","Idade","Telefone","CPF"};
-        //Tabela_Doacoes.setModel(new javax.swing.table.DefaultTableModel(data,nomeColuna));
+        String[] nomeColuna = {"Nome","Sobrenome","Idade","Telefone"};
+        Tabela_Doacoes.setModel(new javax.swing.table.DefaultTableModel(data,nomeColuna));
         
     }
     
@@ -473,6 +473,7 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JTextField NomeDoador;
     private javax.swing.JTextField SobreDoador;
     private javax.swing.JLabel Sobrenome;
+    private javax.swing.JTable Tabela_Doacoes;
     private javax.swing.JFormattedTextField TelefoneDFormattedTextField;
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel jLabel1;
@@ -480,6 +481,5 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
